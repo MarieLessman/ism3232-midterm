@@ -30,11 +30,11 @@ for job in jobs:
     overnight = needs_overnight_run(job["copies"], total)
     print(format_job_line(job["title"], total, proof, overnight))
 
-job_count = job_count + 1
-if proof:
-    proof_count = proof_count + 1
-if overnight:
-    overnight_count = overnight_count + 1
+    job_count = job_count + 1
+    if proof:
+        proof_count = proof_count + 1
+    if overnight:
+        overnight_count = overnight_count + 1
 
 invoiced = total_invoiced(jobs)
 average = invoiced / job_count
