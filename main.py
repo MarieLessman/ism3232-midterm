@@ -36,3 +36,13 @@ if proof:
 if overnight:
     overnight_count = overnight_count + 1
 
+invoiced = total_invoiced(jobs)
+average = invoiced / job_count
+
+print(f"Jobs: {job_count}")
+print(f"Total invoiced: ${invoiced:.2f}")
+print(f"Average job total: ${average:.2f}")
+print(f"Largest job total: {largest_job(jobs)}")
+print(f"Proofs required: {proof_count}")
+print(f"Overnight runs: {overnight_count}")
+
