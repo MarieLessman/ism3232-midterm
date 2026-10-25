@@ -70,7 +70,6 @@ def test_largest_job_returns_title_with_biggest_total():
     ]
     assert largest_job(jobs) == "Big"
 
-
 def test_largest_job_tie_returns_first_in_list():
     jobs = [
         {"title": "First", "copy_price": 1.00, "copies": 100, "student_org": False},
@@ -78,16 +77,13 @@ def test_largest_job_tie_returns_first_in_list():
     ]
     assert largest_job(jobs) == "First"
 
-
 def test_largest_job_empty_list_returns_empty_string():
     assert largest_job([]) == ""
-
 
 def test_format_job_line_with_both_flags_yes():
     assert format_job_line("Catalogs", 680.00, True, True) == (
         "Catalogs: $680.00 | proof: yes | overnight run: yes"
     )
-
 
 def test_format_job_line_rounds_to_two_decimals():
     assert format_job_line("Tickets", 46.092, False, True) == (
