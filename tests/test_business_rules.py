@@ -36,3 +36,23 @@ def test_job_total_changes_when_student_org_is_true():
     student = calculate_job_total(0.80, 500, student_org=True)
     assert round(regular, 2) == 368.00
     assert round(student, 2) == 348.00
+
+def test_proof_not_required_at_300_dollars():
+    assert requires_proof(300.00) is False
+
+def test_proof_required_just_over_300_dollars():
+    assert requires_proof(300.01) is True
+
+def test_overnight_not_needed_at_500_copies():
+    assert needs_overnight_run(500, 100.00) is False
+
+def test_overnight_needed_at_501_copies():
+    assert needs_overnight_run(501, 100.00) is True
+
+def test_overnight_not_needed_at_400_dollars():
+    assert needs_overnight_run(10, 400.00) is False
+
+def test_overnight_needed_just_over_400_dollars():
+    assert needs_overnight_run(10, 400.01) is True
+
+ 
